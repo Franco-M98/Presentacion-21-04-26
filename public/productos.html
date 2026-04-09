@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compumundo</title>
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/productos.css">
+  <link rel="stylesheet" href="css/contacto.css">
+  
+ 
+  <!-- Estilos CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+  <header>
+    <nav class="navbar border-bottom navbar-expand-lg navbar-sticky navbar-airy navbar-light bg-white bg-fixed-white navbar-hover-light navbar-fixed-light fixed-top">
+      <div class="container-fluid">  
+        <div class="text-center">
+        <img src="img/otros/logooficial.png" width="30" height="30"  class="rounded">
+          <a href="index.html">
+            <img src="img/menu/compumundologo.jpg" height="40">
+          </a>
+          </div>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+   
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+					  <ul class="navbar-nav mx-auto text-center">
+              <li class="nav-item"><img src="img/menu/home.png" width="25" height="25"><a href="index.html#Inicio" class="nav-link active py-0">Inicio</a></li>
+              <li class="nav-item"><img src="img/menu/informacion.png" width="25" height="25"><a href="index.html#¿QuienesSomos?" class="nav-link active py-0">¿Quiénes somos?</a></li>
+              <li class="nav-item"><img src="img/menu/productos.png" width="25" height="25"><a href="index.html#Productos" class="nav-link active py-0">Productos</a></li>
+              <li class="nav-item"><img src="img/menu/sucursal.png" width="25" height="25"><a href="index.html#Ubicacion" class="nav-link active py-0">Ubicación</a></li>
+              <li class="nav-item"><img src="img/menu/contacto.png" width="25" height="25"><a href="index.html#Contacto" class="nav-link active py-0">Contacto</a>
+              <li class="nav-item"><img src="img/menu/categoria.png" width="25" height="25"><a href="#" class="nav-link active py-0">Categorías<i class="fa fa-angle-down"></i></a>
+
+              </li> 
+            </ul>
+            
+
+          </div>
+        </div>
+      </nav>
+    </header>
+  <main>
+  
+<section id="Productos" style="padding: 100px 5%; background:">
+  <!-- <h2 class="titulo-principal">Contacto</h2> --> 
+  <div class="cards" id="producto"></div>
+</section>
+
+
+  <script src="js/carrusel.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/mostrarcontraseña.js"></script>
+  <script src="js/productosindex.js"></script>
+
+ 
+
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch(`/producto/${id}`)
+  .then(res => res.json())
+  .then(data => {
+    const cont = document.getElementById("producto");
+    if (data.error) {
+      cont.innerHTML = data.error;
+    } else {
+      cont.innerHTML = `
+       <div class="breadcrumb-bar">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="text-dark" href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item">${data.Categoria}</li>
+            <li class="breadcrumb-item active" aria-current="page">${data.Producto}</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="carta">
+        <div class="imgBox"> 
+          <img src="${data.Imagen}" alt="${data.Producto}" >
+        </div>
+        <div class="card-detalles">
+          <div class="producto">
+          <h3>${data.Producto}</h3>
+          </div>
+          <div class="descripcion">
+            <h4>Descripcion</h4>
+              <p>${data.Descripcion}</p>
+          </div>
+          <div class="pie">
+          <p class="precio">$${parseFloat(data.Precio || 0).toFixed(2)}</p>
+          <a href="#" class="pie-btn" >Comprar</a>
+        </div>
+      </div>
+      `;
+    }
+  })
+  .catch(err => console.error("Error fetch producto:", err));
+</script>
+  
+  </main>
+</body>
+</html>

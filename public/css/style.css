@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+.a-decoracion{
+    text-decoration: none;
+}
+
+.mapa{
+  text-align: center;
+
+}
+
+section{
+    padding: 100px 5%;
+    height: auto;
+}

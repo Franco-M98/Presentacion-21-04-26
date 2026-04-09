@@ -1,0 +1,50 @@
+h6{
+  padding: 10px;
+  text-align: center;
+
+}
+
+hr {
+  padding: 10px;
+
+}
+
+.form-registro {
+  width: 400px;
+  padding: 30px;
+  margin: auto;
+  border-radius: 20px;
+  background-color: white;
+}
+
+
+.form-registro h4{
+  font-size: 22px;
+  margin-bottom: 20px;
+
+}
+
+.controls{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #00B8D4;
+  font-size: 18px;
+
+}
+
+.boton{
+  width: 100%;
+  padding: 10px;
+  background-color: #00B8D4;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  margin: 16px 0;
+  font-size: 16px;
+  
+
+}
+
+  

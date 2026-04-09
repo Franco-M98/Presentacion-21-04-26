@@ -1,0 +1,99 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.carta {
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  height: 380px;
+  width: 700px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.carta .imgBox{
+  position: relative;
+  min-width: 300px;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.imgBox img{
+  width: 85%;
+}
+
+.card-detalles{
+  position: relative;
+  min-width: 300px;
+  display: flex;
+  width: 100%;
+  background-color:#00B8D4;
+  height: 100%;
+  padding: 20px;
+  flex-direction: column;
+  color: white;
+}
+
+.descripcion h4{
+  margin-bottom: 20px;
+}
+.descripcion{
+   margin-top: 20px;
+
+}
+.producto{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.pie{
+  margin-top: 30px;
+  font-size: 1.4em;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.pie .precio{
+  margin-top: 15px;
+}
+
+.pie .pie-btn{
+  background: white;
+  padding: 0.5em 0.8em;
+  text-decoration: none;
+  
+}
+
+.pie a{
+  color: black;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card img {
+    height: 180px;
+  }
+}
