@@ -1,4 +1,4 @@
-🖥️ Compumundo — Guía de instalación y configuración
+🖥️ Compumundo — Guía de instalación y configuración.
 Proyecto web de e-commerce desarrollado con HTML, CSS, Bootstrap 5, Node.js y MySQL.
 
 📋 Requisitos previos
