@@ -3,24 +3,111 @@
     padding: 0;
 }
 
+:root{
+  --navy:#0f1b2d;
+  --cream:#f8f4ee;
+  --text:#1a1a2e;
+  --muted:#6b7280;
+  --white:#ffffff;
+  --celeste:#00B8D4;
+  --grisuave:#f8fafc;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     background-size: cover;
     min-height: 100vh;
-    background-position: center;
+}
+
+/* ID de Section*/
+#inicio, #categorias, #buscador{
+    min-height: 100vh;   
+}
+
+#detalleproductos{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#contacto{
+    background:var(--grisuave)
+}
+
+#productos{
+    background:var(--grisuave)
+}
+
+/* Navbar */
+
+.nav-item:hover img {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(97%) saturate(400%) hue-rotate(155deg) brightness(95%);
+}
+
+.nav-item:hover img,
+.nav-item:hover .nav-link {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(97%) saturate(400%) hue-rotate(155deg) brightness(95%);
+  color: #00B8D4 ;
 }
 
 .a-decoracion{
     text-decoration: none;
 }
 
-.mapa{
-  text-align: center;
-
+/* Section */
+section{
+    padding:6rem 2rem
 }
 
-section{
-    padding: 100px 5%;
-    height: auto;
+.section-inner{
+    max-width:1000px;
+    margin:0 auto
+}
+
+.section-tag{
+    font-size:.72rem;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--celeste);
+    font-weight:500;
+    margin-bottom:.75rem
+}
+
+.section-title{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    margin-bottom:1.2rem;
+    line-height:1.2
+}
+
+.section-line{
+    width:60px;
+    height:3px;
+    background:darkslategrey;
+    border-radius:2px;
+    margin-bottom:2rem
+}
+
+.profile-img {
+  width: 200px;           
+  height: auto;
+  margin: 20px 0;         
+  border-radius: 10px;    
+}
+
+.mapa{ 
+    text-align: center;
+}
+
+.description {
+  max-width: 500px;       
+  line-height: 1.6;  
+}
+
+.a-decoracion{
+    text-decoration: none;
 }

@@ -1,0 +1,10 @@
+.nav-item:hover img {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(97%) saturate(400%) hue-rotate(155deg) brightness(95%);
+}
+
+.nav-item:hover img,.nav-item:hover .nav-link {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(97%) saturate(400%) hue-rotate(155deg) brightness(95%);
+  color: #00B8D4 ;
+}
+
+    
