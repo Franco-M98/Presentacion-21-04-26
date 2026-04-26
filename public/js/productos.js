@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!id) return;
 
-  fetch(`http://localhost:3000/producto/${id}`)
+  fetch(`/producto/${id}`)
     .then(res => res.json())
     .then(data => {
       const cont = document.getElementById("producto");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="breadcrumb-bar">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-dark" href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a class="text-dark" href="/">Inicio</a></li>
                 <li class="breadcrumb-item">${data.Categoria}</li>
                 <li class="breadcrumb-item active" aria-current="page">${data.Producto}</li>
               </ol>
@@ -46,12 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function cargarProductos() {
   const grid = document.getElementById('catalogo');
-
-  // ✅ Si no existe el elemento, esta no es la página de productos
   if (!grid) return;
 
   try {
-    const response = await fetch('http://localhost:3000/productos');
+    const response = await fetch('/productos');
     if (!response.ok) throw new Error('Error al obtener productos');
 
     const productos = await response.json();
@@ -59,7 +57,7 @@ async function cargarProductos() {
 
     productos.forEach(producto => {
       grid.innerHTML += `
-        <a href="detalleproductos.html?id=${producto.Cod_Producto}" class="tarjeta">
+        <a href="/detalleproductos.html?id=${producto.Cod_Producto}" class="tarjeta">
           <img src="${producto.Imagen || 'img/menu/compumundologo.jpg'}">
           <div class="tarjeta-content">
             <span class="badge-categoria card-category">${producto.Categoria || 'Producto'}</span>
